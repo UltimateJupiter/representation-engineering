@@ -1,0 +1,52 @@
+[I 2023-11-29 15:19:10.650 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-11-29 15:19:10.652 ServerApp] nbclassic | extension was successfully linked.
+[I 2023-11-29 15:19:11.369 ServerApp] notebook_shim | extension was successfully linked.
+[I 2023-11-29 15:19:11.411 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2023-11-29 15:19:11.412 LabApp] JupyterLab extension loaded from /home/xz4134/storage/miniconda3/envs/repe/lib/python3.11/site-packages/jupyterlab
+[I 2023-11-29 15:19:11.412 LabApp] JupyterLab application directory is /scratch/gpfs/xz4134/miniconda3/envs/repe/share/jupyter/lab
+[I 2023-11-29 15:19:11.414 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-11-29 15:19:11.424 ServerApp] nbclassic | extension was successfully loaded.
+[I 2023-11-29 15:19:11.425 ServerApp] Serving notebooks from local directory: /home/xz4134/Research/RepE/representation-engineering/examples/honesty
+[I 2023-11-29 15:19:11.425 ServerApp] Jupyter Server 1.23.4 is running at:
+[I 2023-11-29 15:19:11.425 ServerApp] http://della-l08g4:8888/lab?token=926eb0f25824ce24703585138e58cf71fb4a7d1601f36d7f
+[I 2023-11-29 15:19:11.425 ServerApp]  or http://127.0.0.1:8888/lab?token=926eb0f25824ce24703585138e58cf71fb4a7d1601f36d7f
+[I 2023-11-29 15:19:11.425 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2023-11-29 15:19:11.433 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/xz4134/.local/share/jupyter/runtime/jpserver-3510130-open.html
+    Or copy and paste one of these URLs:
+        http://della-l08g4:8888/lab?token=926eb0f25824ce24703585138e58cf71fb4a7d1601f36d7f
+     or http://127.0.0.1:8888/lab?token=926eb0f25824ce24703585138e58cf71fb4a7d1601f36d7f
+Unable to connect to VS Code server: Error in request.
+Error: connect ENOENT /run/user/352733/vscode-ipc-3678c197-3266-4a7b-ace6-f716af7fb084.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1494:16) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'connect',
+  address: '/run/user/352733/vscode-ipc-3678c197-3266-4a7b-ace6-f716af7fb084.sock'
+}
+[W 2023-11-29 15:19:30.313 ServerApp] 404 GET /hub/api (172.17.2.20) 17.33ms referer=None
+[I 2023-11-29 15:19:30.317 NotebookApp] 302 GET /tree? (172.17.2.20) 0.30ms
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[W 2023-11-29 15:19:31.438 ServerApp] 404 GET /hub/api (172.17.2.20) 0.72ms referer=None
+[I 2023-11-29 15:19:31.441 NotebookApp] 302 GET /tree? (172.17.2.20) 0.27ms
+[I 2023-11-29 15:19:34.093 ServerApp] Kernel started: 6ae8f57b-6b2e-4b9a-bfa7-dc13c3564838
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[W 2023-11-29 15:19:34.765 ServerApp] 404 GET /hub/api (172.17.2.20) 0.92ms referer=None
+[I 2023-11-29 15:19:34.874 NotebookApp] 302 GET /tree? (172.17.2.20) 1.03ms
+[W 2023-11-29 15:19:34.887 ServerApp] wrote error: 'Forbidden'
+[W 2023-11-29 15:19:34.887 ServerApp] 403 GET /api/kernelspecs?1701289174877 (172.17.2.20) 0.33ms referer=None
+[W 2023-11-29 15:19:34.887 ServerApp] wrote error: 'Forbidden'
+[W 2023-11-29 15:19:34.888 ServerApp] 403 GET /api/kernels?1701289174877 (172.17.2.20) 0.40ms referer=None
+[W 2023-11-29 15:19:34.888 ServerApp] wrote error: 'Forbidden'
+[W 2023-11-29 15:19:34.888 ServerApp] 403 GET /api/kernels?1701289174878 (172.17.2.20) 0.48ms referer=None
+[W 2023-11-29 15:19:34.888 ServerApp] wrote error: 'Forbidden'
+[W 2023-11-29 15:19:34.888 ServerApp] 403 GET /api/sessions?1701289174879 (172.17.2.20) 0.25ms referer=None
+slurmstepd: error: *** JOB 52505636 ON della-l08g4 CANCELLED AT 2023-11-29T16:24:31 DUE TO TIME LIMIT ***
