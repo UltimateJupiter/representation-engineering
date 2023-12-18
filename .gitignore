@@ -2,3 +2,4 @@ __pycache__
 repe.egg-info/
 *.log
 *.pickle
+storage/
