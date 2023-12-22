@@ -4,6 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --time=05:00:00
 #SBATCH --mem=32GB
+#SBATCH --constraint=a100
 #SBATCH -o ./jupyter.log
 
 # cat /etc/hosts

@@ -10,8 +10,6 @@ from tqdm import tqdm
 import numpy as np
 import pynvml
 
-from repe import repe_pipeline_registry
-repe_pipeline_registry()
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 if device == "cuda":
@@ -19,7 +17,7 @@ if device == "cuda":
     handle = pynvml.nvmlDeviceGetHandleByIndex(0)
     print(pynvml.nvmlDeviceGetName(handle))
 
-model_name_or_path = "ehartford/Wizard-Vicuna-7B-Uncensored"
+model_name_or_path = "mistralai/Mistral-7B-Instruct-v0.1"
 
 model = AutoModelForCausalLM.from_pretrained(model_name_or_path, torch_dtype=torch.float16, device_map="auto")
 use_fast_tokenizer = "LlamaForCausalLM" not in model.config.architectures
