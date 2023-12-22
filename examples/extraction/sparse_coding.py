@@ -29,13 +29,15 @@ from sklearn.decomposition import SparseCoder
 with open('/scratch/network/yc6206/representation-engineering/examples/extraction/reading_vecs_sc.pickle', 'rb') as f:
     reading_vectors = pickle.load(f)
 
-with open('/scratch/network/yc6206/representation-engineering/examples/extraction/sparse_coding.pickle', 'rb') as f:
-    sparse_coding_dict = pickle.load(f)
+# with open('/scratch/network/yc6206/representation-engineering/examples/extraction/sparse_coding.pickle', 'rb') as f:
+#     sparse_coding_dict = pickle.load(f)
 
 emotions = []
 with open ('list_of_emotions.txt', 'r') as f:
     emotions = f.readlines()
     emotions = [emotion.strip('\n') for emotion in emotions]
+
+sparse_coding_dict = {}
 
 for n_components in (pbar := tqdm(range(5, 105, 5))):
     sparse_coding_dict[n_components] = {}
@@ -45,12 +47,11 @@ for n_components in (pbar := tqdm(range(5, 105, 5))):
         for emotion in emotions:
             X.append(reading_vectors[emotion][layer])
         X = np.concatenate(X)
-        dict_learner = DictionaryLearning(n_components=n_components, transform_algorithm='lasso_lars', transform_alpha=0.1, random_state=42)
-        dict = dict_learner.fit(X)
-        sparse_coding_dict[n_components][layer]['dictionary'] = dict.components_
-        coder = SparseCoder(dictionary=dict.components_, transform_algorithm='lasso_lars', transform_alpha=1e-10)
+        dict_learner = DictionaryLearning(n_components=n_components, transform_algorithm='lasso_lars', transform_alpha=0.1, random_state=42, n_jobs=-1, transform_n_nonzero_coefs=2)
+        sc_dict = dict_learner.fit(X)
+        sparse_coding_dict[n_components][layer]['dictionary'] = sc_dict.components_
         for emotion in emotions:
-            sparse_coding_dict[n_components][layer][emotion] = coder.transform(X)
+            sparse_coding_dict[n_components][layer][emotion] = sc_dict.transform(reading_vectors[emotion][layer])
 
     with open('/scratch/network/yc6206/representation-engineering/examples/extraction/sparse_coding.pickle', 'wb') as f:
         pickle.dump(sparse_coding_dict, f)
